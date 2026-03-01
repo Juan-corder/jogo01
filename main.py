@@ -3,7 +3,7 @@ import pygame
 pygame.init()  # comando que inicia os recursos do pygame
 janela = pygame.display.set_mode(size=(600, 480))  # criei uma variável que recebe o comando set que inicializa a janela
 # Abaixo irei criar um loop para que a janela fique aberta sempre
-while True:
+while True: # esse é o loop infinito 
 
     # Agora eu vou checar todos os eventos que ocorrem como tocar em uma tecla, mouse e etc..
     for event in pygame.event.get():
