@@ -1,0 +1,5 @@
+
+
+WIN_WIDTH = 1080
+WIN_HEIGHT = 720
+
