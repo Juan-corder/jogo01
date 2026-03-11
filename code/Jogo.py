@@ -13,7 +13,9 @@ class Jogo:
 
 
         pygame.init()
+        pygame.font.init()
         self.janela = pygame.display.set_mode(size=(WIN_WIDTH, WIN_HEIGHT))  # estou criando a janela do jogo com essas dimensões
+        pygame.display.set_caption("City")
 
     def executar(self):
 
