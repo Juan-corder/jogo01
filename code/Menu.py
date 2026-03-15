@@ -22,7 +22,7 @@ class Menu():
         rodando = True
         while rodando:
             self.janela.blit(self.superficie, self.retangulo)
-            self.texto_menu(70, "City", (255, 255, 0), (540, 200))
+            self.texto_menu(75, "City", (255, 255, 0), (540, 200))
             self.texto_menu(80, "Striker", (255, 255, 0), (540, 270))
 
             for i, option in enumerate(MENU_OPTION):
