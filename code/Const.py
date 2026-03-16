@@ -1,16 +1,20 @@
 
 
-WIN_WIDTH = 600
-WIN_HEIGHT = 400
+WIN_WIDTH = 1200
+WIN_HEIGHT = 800
 
-MENU_OPTION = ('NEW GAME 1P',
-               'NEW GAME 2P COOPERATIVO',
-               'NEW GAME 2P COOPERATIVO',
-               'SCORE',
-               'EXIT')
+MENU_OPTION = ('NOVO JOGO 1P',
+               'NOVO JOGO 2P COOPERATIVO',
+               'LISTA DE COMANDOS',
+               'RECORDE',
+               'SAIR')
 
 
+LISTA_COMANDOS = ('VOAR PARA BAIXO: APERTAR SETA PARA BAIXO NO TECLADO',
+                  'VOAR PARA CIMA: APERTAR SETA PARA CIMA NO TECLADO',
+                  'ATIRAR: APERTAR A TECLA SPAÇO NO TECLADO'
 
+)
 
 
 
