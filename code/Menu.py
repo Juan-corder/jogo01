@@ -12,6 +12,10 @@ class Menu:
     def __init__(self, janela):
         self.janela = janela
         self.superficie = pygame.image.load('./Assets/city 1/10.png').convert_alpha()
+
+        largura, altura = self.janela.get_size()
+        self.superficie = pygame.transform.scale(self.superficie, (largura, altura))
+
         self.retangulo = self.superficie.get_rect(left=0, top=0)
 
     def executar(self):
@@ -21,8 +25,8 @@ class Menu:
         while True:
             # DRAW IMAGES
             self.janela.blit(source=self.superficie, dest=self.retangulo)
-            self.menu_text(50, "City", (255, 255, 0), ((WIN_WIDTH / 2), 70))
-            self.menu_text(50, "Striker", (255, 255, 0), ((WIN_WIDTH / 2), 120))
+            self.menu_text(70, "City", (255, 255, 0), ((WIN_WIDTH / 2), 70))
+            self.menu_text(80, "Striker", (255, 255, 0), ((WIN_WIDTH / 2), 130))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
@@ -58,3 +62,7 @@ class Menu:
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(center=text_center_pos)
         self.janela.blit(source=text_surf, dest=text_rect)
+
+        largura, altura = self.janela.get_size()
+        self.superficie = pygame.transform.scale(self.superficie, (largura, altura))
+
