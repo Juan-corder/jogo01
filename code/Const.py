@@ -27,6 +27,8 @@ ENTIDADE_VELOCIDADE = {
     'Level1bg9': 7,
     'Jogador1': 3,
     'Jogador2': 3,
+    'Inimigo1': 2,
+    'Inimigo2': 3,
 }
 
 JOGADOR_CIMA = {'Jogador1': pygame.K_UP,
@@ -44,7 +46,7 @@ JOGADOR_DIREITA = {'Jogador1': pygame.K_RIGHT,
 JOGADOR_TIRO = {'Jogador1': pygame.K_RCTRL,
                 'Jogador2': pygame.K_LCTRL}
 
-
+EVENTO_INIMIGO = pygame.USEREVENT + 1
 
 
 

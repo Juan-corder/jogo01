@@ -1,4 +1,7 @@
-from code.Const import MENU_OPTION
+import random
+from random import choice
+
+from code.Const import MENU_OPTION, EVENTO_INIMIGO
 from code.EntidadeFactory import EntidadeFactory
 import pygame
 from code.Entidade import Entidade  # importante importar para usar na anotação
@@ -15,6 +18,7 @@ class Nivel:
         self.entidade_lista.append(EntidadeFactory.pegar_entidade('Jogador1'))
         if game_mode in [MENU_OPTION[1]]:
             self.entidade_lista.append(EntidadeFactory.pegar_entidade('Jogador2'))
+        pygame.time.set_timer(EVENTO_INIMIGO, 3000)
 
     def executar(self):
         pygame.mixer_music.load(f'./Assets/Sons/Som da fase 1.mp3')
@@ -29,6 +33,9 @@ class Nivel:
                     if event.type == pygame.QUIT:
                         pygame.quit()
                         quit()
+                    if event.type == EVENTO_INIMIGO:
+                        choice = random.choice(('Inimigo1', 'Inimigo2'))
+                        self.entidade_lista.append(EntidadeFactory.pegar_entidade(choice))
 
             pygame.display.flip()
 

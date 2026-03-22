@@ -1,6 +1,12 @@
+import random
+
 from code.Const import WIN_WIDTH, WIN_HEIGHT
 from code.Fundo import Fundo
+from code.Inimigos import Inimigos
 from code.Jogador import Jogador
+
+
+
 
 
 class EntidadeFactory():
@@ -22,3 +28,7 @@ class EntidadeFactory():
                 return Jogador('Jogador1', (10, WIN_HEIGHT / 2 - 30))
             case 'Jogador2':
                 return Jogador('Jogador2', (10, WIN_HEIGHT / 2 + 30))
+            case 'Inimigo1':
+                return Inimigos('Inimigo1', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40 )))
+            case 'Inimigo2':
+                return Inimigos('Inimigo2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
