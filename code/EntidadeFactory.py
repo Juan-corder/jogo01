@@ -1,15 +1,10 @@
 import random
-
 from code.Const import WIN_WIDTH, WIN_HEIGHT
 from code.Fundo import Fundo
 from code.Inimigos import Inimigos
 from code.Jogador import Jogador
 
-
-
-
-
-class EntidadeFactory():
+class EntidadeFactory:
     def __init__(self):
         pass
 
@@ -24,11 +19,18 @@ class EntidadeFactory():
                     list_bg.append(Fundo(f'Level1bg{i}', (0, 0)))
                     list_bg.append(Fundo(f'Level1bg{i}', (WIN_WIDTH, 0)))
                 return list_bg
+
             case 'Jogador1':
-                return Jogador('Jogador1', (10, WIN_HEIGHT / 2 - 30))
+                return Jogador('Jogador1', (10, WIN_HEIGHT // 2 - 30))
+
             case 'Jogador2':
-                return Jogador('Jogador2', (10, WIN_HEIGHT / 2 + 30))
+                return Jogador('Jogador2', (10, WIN_HEIGHT // 2 + 30))
+
             case 'Inimigo1':
-                return Inimigos('Inimigo1', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40 )))
+                # margem de 60px no topo e no fundo
+                y = random.randint(60, WIN_HEIGHT - 60)
+                return Inimigos('Inimigo1', (WIN_WIDTH + 10, y))
+
             case 'Inimigo2':
-                return Inimigos('Inimigo2', (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT - 40)))
+                y = random.randint(60, WIN_HEIGHT - 60)
+                return Inimigos('Inimigo2', (WIN_WIDTH + 10, y))

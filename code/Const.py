@@ -10,11 +10,22 @@ MENU_OPTION = ('NOVO JOGO 1P',
                'SAIR')
 
 
-LISTA_COMANDOS = ('VOAR PARA BAIXO: APERTAR SETA PARA BAIXO NO TECLADO',
-                  'VOAR PARA CIMA: APERTAR SETA PARA CIMA NO TECLADO',
-                  'ATIRAR: APERTAR A TECLA SPAÇO NO TECLADO'
+LISTA_COMANDOS = {
+    "Jogador 1": {
+        "Mover para cima": "↑",
+        "Mover para baixo": "↓",
+        "Mover para esquerda": "←",
+        "Mover para direita": "→"
+    },
+    "Jogador 2": {
+        "Mover para cima": "W",
+        "Mover para baixo": "S",
+        "Mover para esquerda": "A",
+        "Mover para direita": "D"
+    }
+}
 
-)
+
 
 ENTIDADE_VELOCIDADE = {
     'Level1bg1': 0,
@@ -25,10 +36,10 @@ ENTIDADE_VELOCIDADE = {
     'Level1bg6': 5,
     'Level1bg8': 6,
     'Level1bg9': 7,
-    'Jogador1': 3,
+    'Jogador1': 2,
     'Jogador2': 3,
-    'Inimigo1': 2,
-    'Inimigo2': 3,
+    'Inimigo1': 5,
+    'Inimigo2': 5,
 }
 
 JOGADOR_CIMA = {'Jogador1': pygame.K_UP,
