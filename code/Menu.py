@@ -6,12 +6,12 @@ from pygame import Surface, Rect
 from pygame.font import Font
 
 from code.Const import WIN_WIDTH, MENU_OPTION
-
+from code.utils import load_image, resource_path
 
 class Menu:
     def __init__(self, janela):
         self.janela = janela
-        self.superficie = pygame.image.load('./Assets/city 1/10.png').convert_alpha()
+        self.superficie = load_image("Assets/city 1/10.png")
 
         largura, altura = self.janela.get_size()
         self.superficie = pygame.transform.scale(self.superficie, (largura, altura))
@@ -20,7 +20,7 @@ class Menu:
 
     def executar(self):
         menu_option = 0
-        pygame.mixer_music.load('./Assets/Sons/Som do menu.mp3')
+        pygame.mixer_music.load(resource_path("Assets/Sons/Som do menu.mp3"))
         pygame.mixer_music.play(-1)
         while True:
             # DRAW IMAGES
@@ -35,27 +35,24 @@ class Menu:
                     self.menu_text(20, MENU_OPTION[i], (255, 255, 0), ((WIN_WIDTH / 2), 200 + 25 * i))
             pygame.display.flip()
 
-
             # Check for all events
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()  # Close Window
-                    quit()  # end pygame
+                    pygame.quit()
+                    quit()
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN:  # DOWN KEY
+                    if event.key == pygame.K_DOWN:
                         if menu_option < len(MENU_OPTION) - 1:
                             menu_option += 1
                         else:
                             menu_option = 0
-                    if event.key == pygame.K_UP:  # UP KEY
+                    if event.key == pygame.K_UP:
                         if menu_option > 0:
                             menu_option -= 1
                         else:
                             menu_option = len(MENU_OPTION) - 1
-                    if event.key == pygame.K_RETURN:  # ENTER
+                    if event.key == pygame.K_RETURN:
                         return MENU_OPTION[menu_option]
-
-
 
     def menu_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
         text_font: Font = pygame.font.SysFont(name="Lucida Sans Typewriter", size=text_size)
@@ -65,4 +62,3 @@ class Menu:
 
         largura, altura = self.janela.get_size()
         self.superficie = pygame.transform.scale(self.superficie, (largura, altura))
-

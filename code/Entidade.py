@@ -1,12 +1,13 @@
 from abc import ABC, abstractmethod
 import pygame.image
 import pygame.transform
+from code.utils import load_image
 
 class Entidade(ABC):
     def __init__(self, name: str, position: tuple, janela_size=(1080, 720)):
         self.name = name
-        # Carrega a imagem
-        self.superficie = pygame.image.load('./Assets/' + name + '.png').convert_alpha()
+        # Carrega a imagem com caminho ajustado
+        self.superficie = load_image("Assets/" + name + ".png")
 
         # Redimensiona a imagem para caber na janela
         self.superficie = pygame.transform.scale(self.superficie, janela_size)

@@ -36,7 +36,7 @@ ENTIDADE_VELOCIDADE = {
     'Level1bg6': 5,
     'Level1bg8': 6,
     'Level1bg9': 7,
-    'Jogador1': 2,
+    'Jogador1': 3,
     'Jogador2': 3,
     'Inimigo1': 5,
     'Inimigo2': 5,

@@ -5,6 +5,7 @@ from code.Const import MENU_OPTION, EVENTO_INIMIGO, ENTIDADE_VELOCIDADE, WIN_WID
 from code.EntidadeFactory import EntidadeFactory
 from code.Entidade import Entidade
 from code.Inimigos import Inimigos
+from code.utils import resource_path
 
 class Nivel:
     def __init__(self, janela, name, game_mode):
@@ -27,7 +28,7 @@ class Nivel:
         self.font = pygame.font.SysFont("Arial", 28)
 
     def executar(self):
-        pygame.mixer_music.load('./Assets/Sons/Som da fase 1.mp3')
+        pygame.mixer_music.load(resource_path("Assets/Sons/Som da fase 1.mp3"))
         pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()
 
@@ -40,9 +41,9 @@ class Nivel:
                 self.janela.blit(ent.superficie, ent.retangulo)
 
                 if isinstance(ent, Inimigos):
-                    ent.update()   # inimigos se movem automaticamente
+                    ent.update()
                 else:
-                    ent.mover()    # jogadores dependem do teclado
+                    ent.mover()
 
             # contador de vidas
             vidas_text = self.font.render(f"Vidas: {self.vidas}", True, (255, 0, 0))
